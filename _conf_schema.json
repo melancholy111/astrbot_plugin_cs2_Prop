@@ -1,0 +1,20 @@
+{
+  "send_times": {
+    "description": "每日发送时间点（HH:MM，24 小时制）",
+    "type": "list",
+    "default": ["12:00"],
+    "hint": "添加多个时间点即可一天发送多次，例如 12:00 和 18:00。"
+  },
+  "timezone": {
+    "description": "时区",
+    "type": "string",
+    "default": "Asia/Shanghai",
+    "options": [
+      "Asia/Shanghai",
+      "Asia/Hong_Kong",
+      "Asia/Taipei",
+      "Asia/Singapore",
+      "UTC"
+    ]
+  }
+}
