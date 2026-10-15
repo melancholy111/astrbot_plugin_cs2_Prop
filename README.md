@@ -9,7 +9,7 @@
 - 支持按时区推送，默认 `Asia/Shanghai`。
 - 会话未选择地图时，每天随机推送一张地图的道具。
 - 内置 Mirage、Dust2、Inferno、Nuke、Anubis、Ancient 六张地图的常用道具。
-- 道具说明为社区常见投掷点的整理摘要，完整图文教程可点击消息中的来源链接查看。
+- 每条推送包含投掷方式文字和一张站位/瞄点合并的实景截图。
 
 ## 使用
 
@@ -33,7 +33,7 @@
 
 ## 数据来源
 
-道具说明为作者整理的社区常见投掷点摘要，完整教学和点位图示请参考 [Tracker.gg CS2 Lineups](https://tracker.gg/cs2/lineups)。
+道具截图与投掷数据来自 [CSNADES.gg](https://csnades.gg)，消息中直接引用其公开图片链接。
 
 ## 安装
 

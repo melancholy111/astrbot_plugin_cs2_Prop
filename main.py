@@ -9,13 +9,6 @@ from astrbot.api import AstrBotConfig, logger
 from astrbot.api.event import AstrMessageEvent, MessageChain, filter
 from astrbot.api.star import Context, Star
 
-TYPE_NAMES = {
-    "smoke": "烟雾弹",
-    "flash": "闪光弹",
-    "molotov": "燃烧弹",
-    "he": "手雷",
-}
-
 MAP_ALIASES = {
     "mirage": {"mirage", "荒漠迷城", "米垃圾"},
     "dust2": {"dust2", "dust", "炙热沙城", "沙二"},
@@ -131,7 +124,7 @@ class Main(Star):
             if item is None:
                 logger.warning("No lineup data available for session %s.", umo)
                 continue
-            chain = MessageChain().message(self._format_lineup(item))
+            chain = self._build_lineup_message(item)
             try:
                 ok = await self.context.send_message(umo, chain)
                 if not ok:
@@ -168,25 +161,24 @@ class Main(Star):
             "lineup": lineup,
         }
 
-    def _format_lineup(self, item: dict) -> str:
-        """Format a lineup into a readable text message."""
+    def _build_lineup_message(self, item: dict) -> MessageChain:
+        """Build one text-and-image message for a lineup."""
         lineup = item["lineup"]
-        type_label = TYPE_NAMES.get(lineup.get("type"), "道具")
-        lines = [
-            "【CS2 实用道具】",
-            f"地图：{item['map_name']}",
-            f"道具：{type_label}",
-            f"标题：{lineup.get('title', '')}",
-            f"阵营：{lineup.get('side', '通用')}",
-            f"站位：{lineup.get('spot', '')}",
-            f"瞄点：{lineup.get('aim', '')}",
-            f"说明：{lineup.get('description', '')}",
-        ]
-        source_name = lineup.get("source_name", "")
-        source = lineup.get("source", "")
-        if source:
-            lines.append(f"来源：{source_name} {source}".strip())
-        return "\n".join(lines)
+        side_label = {"t": "T阵营", "ct": "CT阵营"}.get(
+            str(lineup.get("side", "t")).lower(),
+            "通用",
+        )
+        text = (
+            "【CS2实用道具】\n"
+            f"{item['map_name']}{side_label}{lineup.get('title', '')}\n"
+            f"投掷方式：{lineup.get('throw', '')}\n"
+            "站位/瞄点："
+        )
+        chain = MessageChain().message(text)
+        image = lineup.get("image", "")
+        if image:
+            chain.url_image(image)
+        return chain
 
     def _resolve_map(self, raw: str) -> str | None:
         """Resolve a user-provided map name or alias."""
@@ -284,4 +276,5 @@ class Main(Star):
         if item is None:
             yield event.plain_result("暂无可用的道具数据，请稍后再试。")
             return
-        yield event.plain_result(self._format_lineup(item))
+        chain = self._build_lineup_message(item)
+        yield event.chain_result(chain.chain)

@@ -5,53 +5,38 @@
       "lineups": [
         {
           "type": "smoke",
-          "title": "T 出生点封 A 窗烟",
+          "title": "T出生点封A窗烟",
           "side": "T",
-          "spot": "T 出生点右侧贴墙",
-          "aim": "对准屋顶天线与墙沿交界处上方，跳投",
-          "description": "封住 A 区 window，切断 CT 的中路观察与架枪。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
+          "throw": "跳投（助跑）",
+          "image": "https://assets.csnades.gg/nades/mirage-smoke-C2ojbNdjhI/lineup.webp"
         },
         {
           "type": "smoke",
-          "title": "T 出生点封拱门烟",
+          "title": "T出生点封拱门烟",
           "side": "T",
-          "spot": "T 出生点角落",
-          "aim": "对准左前方屋顶边缘，助跑后投出",
-          "description": "封住 jungle 与 connector，配合 A 区进攻。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
+          "throw": "跳投（原地站立）",
+          "image": "https://assets.csnades.gg/nades/mirage-smoke-5w0tr1Gtez/lineup.webp"
         },
         {
           "type": "smoke",
-          "title": "A 坡道封警家烟",
+          "title": "T出生点封连接烟",
           "side": "T",
-          "spot": "A 坡道中段",
-          "aim": "对准宫殿上方天空，跳投",
-          "description": "封住 CT 回防路线，拖延回防并保护下包。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
+          "throw": "跳投（原地站立）",
+          "image": "https://assets.csnades.gg/nades/mirage-smoke-gix2YshKRu/lineup.webp"
         },
         {
-          "type": "flash",
-          "title": "B 二楼入口闪",
+          "type": "flashbang",
+          "title": "T出生点闪A坡道",
           "side": "T",
-          "spot": "B 二楼门口",
-          "aim": "向白车上方扔出，借墙反弹",
-          "description": "清 B 包点近点与白车位，掩护队友进点。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
+          "throw": "跳投（助跑）",
+          "image": "https://assets.csnades.gg/nades/mirage-flashbang-eCFe2nCBck/lineup.webp"
         },
         {
           "type": "molotov",
-          "title": "A 区警家火",
+          "title": "A坡道烧A包点默认位",
           "side": "T",
-          "spot": "A 坡道或宫殿门口",
-          "aim": "投向 CT 入口内侧",
-          "description": "逼退 CT 或阻止其快速回防 A 包点。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
+          "throw": "左键投掷（原地站立）",
+          "image": "https://assets.csnades.gg/nades/mirage-molotov-0fG2FlhoXX/lineup.webp"
         }
       ]
     },
@@ -60,53 +45,38 @@
       "lineups": [
         {
           "type": "smoke",
-          "title": "T 出生点封 X 箱烟",
+          "title": "T出生点封X箱烟",
           "side": "T",
-          "spot": "T 出生点墙边",
-          "aim": "对准门框与墙缝交界处上方，跳投",
-          "description": "封住中路 X 箱，掩护队友安全过中门。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
+          "throw": "跳投（原地站立）",
+          "image": "https://assets.csnades.gg/nades/dust2-smoke-pXWCQLmYhk/lineup.webp"
         },
         {
           "type": "smoke",
-          "title": "A 大封过点烟",
+          "title": "A门封过点烟",
           "side": "T",
-          "spot": "A 大道尽头贴墙",
-          "aim": "对准蓝箱上方参照物，跳投",
-          "description": "封住 A 包点过点，掩护队伍下包。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
+          "throw": "左键投掷（助跑）",
+          "image": "https://assets.csnades.gg/nades/dust2-smoke-dBt2lcA3vc/lineup.webp"
         },
         {
           "type": "smoke",
-          "title": "A 大封警家烟",
+          "title": "X箱封警家烟",
           "side": "T",
-          "spot": "A 大道拐角",
-          "aim": "对准墙缝上方，助跑投出",
-          "description": "封住 CT 出生点出口，阻断回防视野。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
+          "throw": "左键投掷（原地站立）",
+          "image": "https://assets.csnades.gg/nades/dust2-smoke-XMJVOfP5Ca/lineup.webp"
         },
         {
-          "type": "flash",
-          "title": "B 通道闪",
+          "type": "flashbang",
+          "title": "B通道闪B点",
           "side": "T",
-          "spot": "B 通道入口",
-          "aim": "向 B 门上方扔出，反弹进点",
-          "description": "清 B 包点近点，为进点争取时间。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
+          "throw": "跳投（原地站立）",
+          "image": "https://assets.csnades.gg/nades/dust2-flashbang-xsMpaKKGvB/lineup.webp"
         },
         {
           "type": "molotov",
-          "title": "B 包点火",
+          "title": "A小烧A包点默认位",
           "side": "T",
-          "spot": "B 通道",
-          "aim": "投向 B 包点常规防守站位",
-          "description": "逼退守包 CT，配合队友进点。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
+          "throw": "跳投（助跑）",
+          "image": "https://assets.csnades.gg/nades/dust2-molotov-4WknC6j24U/lineup.webp"
         }
       ]
     },
@@ -114,54 +84,39 @@
       "name": "Inferno",
       "lineups": [
         {
-          "type": "molotov",
-          "title": "香蕉道火",
-          "side": "T",
-          "spot": "香蕉道入口",
-          "aim": "投向沙袋与转角",
-          "description": "逼退 CT 前压香蕉道，控制 B 区入口。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
-        },
-        {
           "type": "smoke",
           "title": "香蕉道封警家烟",
           "side": "T",
-          "spot": "香蕉道贴墙",
-          "aim": "对准教堂上方，跳投",
-          "description": "封住 B 区 CT 回防路线，掩护 B 点进攻。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
+          "throw": "左键投掷（原地站立）",
+          "image": "https://assets.csnades.gg/nades/inferno-smoke-MrAFqNRIOT/lineup.webp"
         },
         {
           "type": "smoke",
-          "title": "中路封 A 坑烟",
+          "title": "香蕉道封棺材烟",
           "side": "T",
-          "spot": "中路或二楼",
-          "aim": "对准阳台边缘上方",
-          "description": "封住 A 包点 pit，减少下包时的威胁。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
-        },
-        {
-          "type": "flash",
-          "title": "A 区闪",
-          "side": "T",
-          "spot": "A 通道或中路",
-          "aim": "借墙反弹入点",
-          "description": "清 A 包点近点，掩护队友进点。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
+          "throw": "跳投（原地站立）",
+          "image": "https://assets.csnades.gg/nades/inferno-smoke-vTGxzPpPDo/lineup.webp"
         },
         {
           "type": "smoke",
-          "title": "B 区棺材烟",
+          "title": "中路封A坑烟",
           "side": "T",
-          "spot": "香蕉道",
-          "aim": "对准 B 区上方参照点",
-          "description": "封住棺材位，配合 B 点进攻与下包。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
+          "throw": "跳投（原地站立）",
+          "image": "https://assets.csnades.gg/nades/inferno-smoke-mTMBhbR0iR/lineup.webp"
+        },
+        {
+          "type": "molotov",
+          "title": "香蕉道烧车位",
+          "side": "T",
+          "throw": "左键投掷（助跑）",
+          "image": "https://assets.csnades.gg/nades/inferno-molotov-mr1vGyywxQ/lineup.webp"
+        },
+        {
+          "type": "flashbang",
+          "title": "T出生点闪香蕉道",
+          "side": "T",
+          "throw": "跳投（原地站立）",
+          "image": "https://assets.csnades.gg/nades/inferno-flashbang-oTBicgHKcG/lineup.webp"
         }
       ]
     },
@@ -170,53 +125,38 @@
       "lineups": [
         {
           "type": "smoke",
-          "title": "外场封仓库烟",
+          "title": "T出生点封仓库远端",
           "side": "T",
-          "spot": "外场",
-          "aim": "对准红箱与墙沿交界处",
-          "description": "封住 secret，掩护队友下外场。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
+          "throw": "跳投（原地站立）",
+          "image": "https://assets.csnades.gg/nades/nuke-smoke-EsLX408n4d/lineup.webp"
         },
         {
           "type": "smoke",
-          "title": "外场封奖杯烟",
+          "title": "外场封车库",
           "side": "T",
-          "spot": "外场",
-          "aim": "对准奖杯房上方",
-          "description": "封住 trophy，限制 CT 的外场观察。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
+          "throw": "跳投（原地站立）",
+          "image": "https://assets.csnades.gg/nades/nuke-smoke-0qZP5UcuWj/lineup.webp"
         },
         {
-          "type": "flash",
-          "title": "A 厅闪",
+          "type": "smoke",
+          "title": "奖杯房封斜坡",
           "side": "T",
-          "spot": "A 厅门口",
-          "aim": "借门框反弹入点",
-          "description": "清 A 厅近点，掩护进厅。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
+          "throw": "左键投掷（助跑）",
+          "image": "https://assets.csnades.gg/nades/nuke-smoke-PAOl9mzPQl/lineup.webp"
         },
         {
           "type": "molotov",
-          "title": "斜坡火",
+          "title": "T屋顶烧A厅上",
           "side": "T",
-          "spot": "外场或 A 厅",
-          "aim": "投向斜坡",
-          "description": "逼退 CT 或阻止其从斜坡回防。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
+          "throw": "跳投（助跑）",
+          "image": "https://assets.csnades.gg/nades/nuke-molotov-IcIyXVJRjT/lineup.webp"
         },
         {
-          "type": "smoke",
-          "title": "铁板烟",
+          "type": "flashbang",
+          "title": "大厅闪A厅",
           "side": "T",
-          "spot": "内场",
-          "aim": "对准铁板上方",
-          "description": "封住 CT 从铁板的回防路线。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
+          "throw": "左键投掷（原地站立）",
+          "image": "https://assets.csnades.gg/nades/nuke-flashbang-rBEiGe14xy/lineup.webp"
         }
       ]
     },
@@ -225,53 +165,38 @@
       "lineups": [
         {
           "type": "smoke",
-          "title": "中路封烟",
+          "title": "T出生点封中路",
           "side": "T",
-          "spot": "中路",
-          "aim": "对准拱门上方，跳投",
-          "description": "封住 CT 中路视野，掩护转点。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
+          "throw": "跳投（原地站立）",
+          "image": "https://assets.csnades.gg/nades/anubis-smoke-SS2YPrXfMr/lineup.webp"
         },
         {
           "type": "smoke",
-          "title": "A 区封连接烟",
+          "title": "T出生点封B点",
           "side": "T",
-          "spot": "中路或 A 通道",
-          "aim": "对准连接口上方",
-          "description": "封住 A 区连接，阻断 CT 回防。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
+          "throw": "跳投（原地站立）",
+          "image": "https://assets.csnades.gg/nades/anubis-smoke-g4Qwh78VHD/lineup.webp"
         },
         {
-          "type": "flash",
-          "title": "B 区闪",
+          "type": "smoke",
+          "title": "中门封连接",
           "side": "T",
-          "spot": "B 通道",
-          "aim": "借墙反弹入点",
-          "description": "清 B 包点近点，掩护进点。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
+          "throw": "跳投（助跑）",
+          "image": "https://assets.csnades.gg/nades/anubis-smoke-kBDHAlSvdZ/lineup.webp"
         },
         {
           "type": "molotov",
-          "title": "中路火",
+          "title": "桥烧中路",
           "side": "T",
-          "spot": "中路",
-          "aim": "投向 CT 前压位",
-          "description": "逼退 CT 前压，保护中路控制权。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
+          "throw": "左键投掷（原地站立）",
+          "image": "https://assets.csnades.gg/nades/anubis-molotov-W9w4iMnVJQ/lineup.webp"
         },
         {
-          "type": "smoke",
-          "title": "B 区封警家烟",
+          "type": "flashbang",
+          "title": "遗迹闪B点",
           "side": "T",
-          "spot": "B 通道",
-          "aim": "对准 CT 出口上方",
-          "description": "封住 CT 回防路线，保护 B 点下包。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
+          "throw": "左键投掷（原地站立）",
+          "image": "https://assets.csnades.gg/nades/anubis-flashbang-7tUUJ7tcuY/lineup.webp"
         }
       ]
     },
@@ -280,53 +205,38 @@
       "lineups": [
         {
           "type": "smoke",
-          "title": "中路封烟",
+          "title": "T出生点封中路",
           "side": "T",
-          "spot": "中路",
-          "aim": "对准墙沿上方",
-          "description": "封住中路，掩护队伍转点。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
+          "throw": "跳投（原地站立）",
+          "image": "https://assets.csnades.gg/nades/ancient-smoke-mhHNTLDnNw/lineup.webp"
         },
         {
           "type": "smoke",
-          "title": "A 区封烟",
+          "title": "T出生点封甜甜圈",
           "side": "T",
-          "spot": "A 通道",
-          "aim": "对准 A 点上方参照物",
-          "description": "封住 A 包点，减少下包威胁。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
+          "throw": "跳投（原地站立）",
+          "image": "https://assets.csnades.gg/nades/ancient-smoke-osar56YWBw/lineup.webp"
         },
         {
           "type": "smoke",
-          "title": "B 坡道封烟",
+          "title": "遗迹封山洞",
           "side": "T",
-          "spot": "B 通道",
-          "aim": "对准坡道上方",
-          "description": "封住 B 坡道，掩护进攻。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
-        },
-        {
-          "type": "flash",
-          "title": "甜甜圈闪",
-          "side": "T",
-          "spot": "中路甜甜圈位",
-          "aim": "借墙反弹",
-          "description": "清中路近点，帮助队伍控制中路。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
+          "throw": "跳投（原地站立）",
+          "image": "https://assets.csnades.gg/nades/ancient-smoke-I7c4pmQBTz/lineup.webp"
         },
         {
           "type": "molotov",
-          "title": "A 区火",
+          "title": "A门烧A包点默认位",
           "side": "T",
-          "spot": "A 通道",
-          "aim": "投向 A 包点常规防守站位",
-          "description": "逼退守点 CT，配合进点。",
-          "source_name": "tracker.gg",
-          "source": "https://tracker.gg/cs2/lineups"
+          "throw": "左键投掷（走动）",
+          "image": "https://assets.csnades.gg/nades/ancient-molotov-YyXKTfxCYJ/lineup.webp"
+        },
+        {
+          "type": "flashbang",
+          "title": "A门闪A点",
+          "side": "T",
+          "throw": "左键投掷（蹲下）",
+          "image": "https://assets.csnades.gg/nades/ancient-flashbang-JkGrag9qfy/lineup.webp"
         }
       ]
     }
