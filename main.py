@@ -5,6 +5,7 @@ import json
 import random
 from pathlib import Path
 
+import astrbot.api.message_components as Comp
 from astrbot.api import AstrBotConfig, logger
 from astrbot.api.event import AstrMessageEvent, MessageChain, filter
 from astrbot.api.star import Context, Star
@@ -124,14 +125,17 @@ class Main(Star):
             if item is None:
                 logger.warning("No lineup data available for session %s.", umo)
                 continue
-            chain = self._build_lineup_message(item)
+            text_chain = MessageChain().message(self._build_lineup_text(item))
+            video_chain = self._build_lineup_video(item)
             try:
-                ok = await self.context.send_message(umo, chain)
-                if not ok:
+                text_ok = await self.context.send_message(umo, text_chain)
+                if not text_ok:
                     logger.warning(
                         "Failed to deliver CS2 utility push to %s.",
                         umo,
                     )
+                if video_chain.chain:
+                    await self.context.send_message(umo, video_chain)
             except Exception:
                 logger.exception(
                     "Failed to deliver CS2 utility push to %s.",
@@ -161,23 +165,26 @@ class Main(Star):
             "lineup": lineup,
         }
 
-    def _build_lineup_message(self, item: dict) -> MessageChain:
-        """Build one text-and-image message for a lineup."""
+    def _build_lineup_text(self, item: dict) -> str:
+        """Build the text message for a lineup."""
         lineup = item["lineup"]
         side_label = {"t": "T阵营", "ct": "CT阵营"}.get(
             str(lineup.get("side", "t")).lower(),
             "通用",
         )
-        text = (
+        return (
             "【CS2实用道具】\n"
             f"{item['map_name']}{side_label}{lineup.get('title', '')}\n"
             f"投掷方式：{lineup.get('throw', '')}\n"
-            "站位/瞄点："
+            f"说明：{lineup.get('desc', '')}"
         )
-        chain = MessageChain().message(text)
-        image = lineup.get("image", "")
-        if image:
-            chain.url_image(image)
+
+    def _build_lineup_video(self, item: dict) -> MessageChain:
+        """Build the teaching video message for a lineup."""
+        chain = MessageChain()
+        video = item["lineup"].get("video", "")
+        if video:
+            chain.chain.append(Comp.Video.fromURL(video))
         return chain
 
     def _resolve_map(self, raw: str) -> str | None:
@@ -276,5 +283,7 @@ class Main(Star):
         if item is None:
             yield event.plain_result("暂无可用的道具数据，请稍后再试。")
             return
-        chain = self._build_lineup_message(item)
-        yield event.chain_result(chain.chain)
+        yield event.plain_result(self._build_lineup_text(item))
+        video_chain = self._build_lineup_video(item)
+        if video_chain.chain:
+            yield event.chain_result(video_chain.chain)
