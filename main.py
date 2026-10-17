@@ -132,21 +132,21 @@ class Main(Star):
 
         for umo, state in subscriptions.items():
             map_key = state.get("map") if isinstance(state, dict) else state
-            bot_id = (
-                state.get("bot_id") or "0" if isinstance(state, dict) else "0"
-            )
             item = self._pick_lineup(map_key)
             if item is None:
                 logger.warning("No lineup data available for session %s.", umo)
                 continue
-            chain = self._build_lineup_message(item, bot_id)
+            text_chain = MessageChain().message(self._build_lineup_text(item))
+            video_chain = self._build_lineup_video(item)
             try:
-                ok = await self.context.send_message(umo, chain)
-                if not ok:
+                text_ok = await self.context.send_message(umo, text_chain)
+                if not text_ok:
                     logger.warning(
                         "Failed to deliver CS2 utility push to %s.",
                         umo,
                     )
+                if video_chain.chain:
+                    await self.context.send_message(umo, video_chain)
             except Exception:
                 logger.exception(
                     "Failed to deliver CS2 utility push to %s.",
@@ -190,31 +190,13 @@ class Main(Star):
             f"说明：{lineup.get('desc', '')}"
         )
 
-    def _build_lineup_message(
-        self,
-        item: dict,
-        bot_id: str | None = None,
-    ) -> MessageChain:
-        """Build a merged-forward chat record for a lineup."""
-        sender_id = bot_id or "0"
-        sender_name = "CS2每日道具"
-        nodes = [
-            Comp.Node(
-                uin=sender_id,
-                name=sender_name,
-                content=[Comp.Plain(self._build_lineup_text(item))],
-            )
-        ]
+    def _build_lineup_video(self, item: dict) -> MessageChain:
+        """Build the teaching video message for a lineup."""
+        chain = MessageChain()
         video = item["lineup"].get("video", "")
         if video:
-            nodes.append(
-                Comp.Node(
-                    uin=sender_id,
-                    name=sender_name,
-                    content=[Comp.Video.fromURL(video)],
-                )
-            )
-        return MessageChain(chain=[Comp.Nodes(nodes)])
+            chain.chain.append(Comp.Video.fromURL(video))
+        return chain
 
     def _resolve_map(self, raw: str) -> str | None:
         """Resolve a user-provided map name or alias."""
@@ -319,5 +301,7 @@ class Main(Star):
         if item is None:
             yield event.plain_result("暂无可用的道具数据，请稍后再试。")
             return
-        chain = self._build_lineup_message(item, event.get_self_id())
-        yield event.chain_result(chain.chain)
+        yield event.plain_result(self._build_lineup_text(item))
+        video_chain = self._build_lineup_video(item)
+        if video_chain.chain:
+            yield event.chain_result(video_chain.chain)
