@@ -277,9 +277,9 @@ class Main(Star):
     async def map_cmd(self, event: AstrMessageEvent, map_name: str = None):
         """查看或切换本会话的每日道具地图"""
         if not map_name:
-            current = self._map_display_name(
-                self._subscriptions.get(event.unified_msg_origin)
-            )
+            state = self._subscriptions.get(event.unified_msg_origin)
+            current_map = state.get("map") if isinstance(state, dict) else state
+            current = self._map_display_name(current_map)
             available = "、".join(
                 self._map_display_name(key) for key in self._list_maps()
             )
@@ -313,7 +313,9 @@ class Main(Star):
     @filter.command("nade", alias={"道具", "学道具"})
     async def nade(self, event: AstrMessageEvent):
         """立即学习一个 CS2 实用道具"""
-        item = self._pick_lineup(self._subscriptions.get(event.unified_msg_origin))
+        state = self._subscriptions.get(event.unified_msg_origin)
+        map_key = state.get("map") if isinstance(state, dict) else state
+        item = self._pick_lineup(map_key)
         if item is None:
             yield event.plain_result("暂无可用的道具数据，请稍后再试。")
             return
